@@ -120,10 +120,6 @@ public class Track {
 		return this.artworkCount;
 	}
 	
-	public Integer getBitRate() {
-		return this.bitrate;
-	}
-	
 	public Integer getBpm() {
 		return this.bpm;
 	}
