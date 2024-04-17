@@ -2,6 +2,7 @@ package com.github.pireba.itunesparser;
 
 import java.net.URL;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * This class represents an iTunes Track.<br>
@@ -92,6 +93,10 @@ public class Track {
         return albumRatingComputed;
     }
 
+	/**
+	 * Gets bitrate of track as an integer value
+	 * @return Value returned as 320, 128 and so on...
+	 */
     public Integer getBitrate() {
         return bitrate;
     }
@@ -300,6 +305,10 @@ public class Track {
 		return this.stopTime;
 	}
 	
+	/**
+	 * Gets total time of track as a long value
+	 * @return The value represents time in milliseconds (ms)
+	 */
 	public Long getTotalTime() {
 		return this.totalTime;
 	}
@@ -631,5 +640,93 @@ public class Track {
 	public void setWork(String work) {
 	    this.work = work;
 	}
+
+    @Override
+    public String toString()
+    {
+        return "Track [album=" + album + ", albumArtist=" + albumArtist + ", albumRating=" + albumRating
+                + ", albumRatingComputed=" + albumRatingComputed + ", artist=" + artist + ", artworkCount="
+                + artworkCount + ", bitrate=" + bitrate + ", bpm=" + bpm + ", clean=" + clean + ", comments=" + comments
+                + ", compilation=" + compilation + ", composer=" + composer + ", dateAdded=" + dateAdded
+                + ", dateModified=" + dateModified + ", disabled=" + disabled + ", discCount=" + discCount
+                + ", discNumber=" + discNumber + ", episode=" + episode + ", episodeOrder=" + episodeOrder
+                + ", equalizer=" + equalizer + ", explicit=" + explicit + ", fileFolderCount=" + fileFolderCount
+                + ", fileType=" + fileType + ", genre=" + genre + ", grouping=" + grouping + ", kind=" + kind
+                + ", libraryFolderCount=" + libraryFolderCount + ", location=" + location + ", loved=" + loved
+                + ", name=" + name + ", partOfGaplessAlbum=" + partOfGaplessAlbum + ", persistentID=" + persistentID
+                + ", playCount=" + playCount + ", playDate=" + playDate + ", playDateUTC=" + playDateUTC
+                + ", purchased=" + purchased + ", rating=" + rating + ", releaseDate=" + releaseDate + ", sampleRate="
+                + sampleRate + ", season=" + season + ", series=" + series + ", size=" + size + ", skipCount="
+                + skipCount + ", skipDate=" + skipDate + ", sortAlbum=" + sortAlbum + ", sortAlbumArtist="
+                + sortAlbumArtist + ", sortArtist=" + sortArtist + ", sortComposer=" + sortComposer + ", sortName="
+                + sortName + ", sortSeries=" + sortSeries + ", startTime=" + startTime + ", stopTime=" + stopTime
+                + ", totalTime=" + totalTime + ", trackCount=" + trackCount + ", trackID=" + trackID + ", trackNumber="
+                + trackNumber + ", trackType=" + trackType + ", volumeAdjustment=" + volumeAdjustment + ", year=" + year
+                + ", video=" + video + ", movie=" + movie + ", videoHeight=" + videoHeight + ", videoWidth="
+                + videoWidth + ", unplayed=" + unplayed + ", podcast=" + podcast + ", normalization=" + normalization
+                + ", work=" + work + "]";
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(album, albumArtist, albumRating, albumRatingComputed, artist, artworkCount, bitrate, bpm,
+                clean, comments, compilation, composer, dateAdded, dateModified, disabled, discCount, discNumber,
+                episode, episodeOrder, equalizer, explicit, fileFolderCount, fileType, genre, grouping, kind,
+                libraryFolderCount, location, loved, movie, name, normalization, partOfGaplessAlbum, persistentID,
+                playCount, playDate, playDateUTC, podcast, purchased, rating, releaseDate, sampleRate, season, series,
+                size, skipCount, skipDate, sortAlbum, sortAlbumArtist, sortArtist, sortComposer, sortName, sortSeries,
+                startTime, stopTime, totalTime, trackCount, trackID, trackNumber, trackType, unplayed, video,
+                videoHeight, videoWidth, volumeAdjustment, work, year);
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Track other = (Track) obj;
+        return Objects.equals(album, other.album) && Objects.equals(albumArtist, other.albumArtist)
+                && Objects.equals(albumRating, other.albumRating)
+                && Objects.equals(albumRatingComputed, other.albumRatingComputed)
+                && Objects.equals(artist, other.artist) && Objects.equals(artworkCount, other.artworkCount)
+                && Objects.equals(bitrate, other.bitrate) && Objects.equals(bpm, other.bpm)
+                && Objects.equals(clean, other.clean) && Objects.equals(comments, other.comments)
+                && Objects.equals(compilation, other.compilation) && Objects.equals(composer, other.composer)
+                && Objects.equals(dateAdded, other.dateAdded) && Objects.equals(dateModified, other.dateModified)
+                && Objects.equals(disabled, other.disabled) && Objects.equals(discCount, other.discCount)
+                && Objects.equals(discNumber, other.discNumber) && Objects.equals(episode, other.episode)
+                && Objects.equals(episodeOrder, other.episodeOrder) && Objects.equals(equalizer, other.equalizer)
+                && Objects.equals(explicit, other.explicit) && Objects.equals(fileFolderCount, other.fileFolderCount)
+                && Objects.equals(fileType, other.fileType) && Objects.equals(genre, other.genre)
+                && Objects.equals(grouping, other.grouping) && Objects.equals(kind, other.kind)
+                && Objects.equals(libraryFolderCount, other.libraryFolderCount)
+                && Objects.equals(location, other.location) && Objects.equals(loved, other.loved)
+                && Objects.equals(movie, other.movie) && Objects.equals(name, other.name)
+                && Objects.equals(normalization, other.normalization)
+                && Objects.equals(partOfGaplessAlbum, other.partOfGaplessAlbum)
+                && Objects.equals(persistentID, other.persistentID) && Objects.equals(playCount, other.playCount)
+                && Objects.equals(playDate, other.playDate) && Objects.equals(playDateUTC, other.playDateUTC)
+                && Objects.equals(podcast, other.podcast) && Objects.equals(purchased, other.purchased)
+                && Objects.equals(rating, other.rating) && Objects.equals(releaseDate, other.releaseDate)
+                && Objects.equals(sampleRate, other.sampleRate) && Objects.equals(season, other.season)
+                && Objects.equals(series, other.series) && Objects.equals(size, other.size)
+                && Objects.equals(skipCount, other.skipCount) && Objects.equals(skipDate, other.skipDate)
+                && Objects.equals(sortAlbum, other.sortAlbum) && Objects.equals(sortAlbumArtist, other.sortAlbumArtist)
+                && Objects.equals(sortArtist, other.sortArtist) && Objects.equals(sortComposer, other.sortComposer)
+                && Objects.equals(sortName, other.sortName) && Objects.equals(sortSeries, other.sortSeries)
+                && Objects.equals(startTime, other.startTime) && Objects.equals(stopTime, other.stopTime)
+                && Objects.equals(totalTime, other.totalTime) && Objects.equals(trackCount, other.trackCount)
+                && Objects.equals(trackID, other.trackID) && Objects.equals(trackNumber, other.trackNumber)
+                && Objects.equals(trackType, other.trackType) && Objects.equals(unplayed, other.unplayed)
+                && Objects.equals(video, other.video) && Objects.equals(videoHeight, other.videoHeight)
+                && Objects.equals(videoWidth, other.videoWidth)
+                && Objects.equals(volumeAdjustment, other.volumeAdjustment) && Objects.equals(work, other.work)
+                && Objects.equals(year, other.year);
+    }
 	
 }

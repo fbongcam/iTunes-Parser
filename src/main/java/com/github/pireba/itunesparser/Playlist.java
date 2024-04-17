@@ -1,6 +1,7 @@
 package com.github.pireba.itunesparser;
 
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * This class represents an iTunes Playlist.<br>
@@ -186,4 +187,47 @@ public class Playlist {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString()
+    {
+        return "Playlist [allItems=" + allItems + ", audiobooks=" + audiobooks + ", distinguishedKind="
+                + distinguishedKind + ", folder=" + folder + ", master=" + master + ", movies=" + movies + ", music="
+                + music + ", name=" + name + ", parentPersistentID=" + parentPersistentID + ", playlistID=" + playlistID
+                + ", playlistItems=" + playlistItems + ", playlistPersistentID=" + playlistPersistentID + ", podcasts="
+                + podcasts + ", smartCriteria=" + smartCriteria + ", smartInfo=" + smartInfo + ", tvShows=" + tvShows
+                + ", visible=" + visible + ", description=" + description + "]";
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(allItems, audiobooks, description, distinguishedKind, folder, master, movies, music, name,
+                parentPersistentID, playlistID, playlistItems, playlistPersistentID, podcasts, smartCriteria, smartInfo,
+                tvShows, visible);
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Playlist other = (Playlist) obj;
+        return Objects.equals(allItems, other.allItems) && Objects.equals(audiobooks, other.audiobooks)
+                && Objects.equals(description, other.description)
+                && Objects.equals(distinguishedKind, other.distinguishedKind) && Objects.equals(folder, other.folder)
+                && Objects.equals(master, other.master) && Objects.equals(movies, other.movies)
+                && Objects.equals(music, other.music) && Objects.equals(name, other.name)
+                && Objects.equals(parentPersistentID, other.parentPersistentID)
+                && Objects.equals(playlistID, other.playlistID) && Objects.equals(playlistItems, other.playlistItems)
+                && Objects.equals(playlistPersistentID, other.playlistPersistentID)
+                && Objects.equals(podcasts, other.podcasts) && Objects.equals(smartCriteria, other.smartCriteria)
+                && Objects.equals(smartInfo, other.smartInfo) && Objects.equals(tvShows, other.tvShows)
+                && Objects.equals(visible, other.visible);
+    }
+    
 }

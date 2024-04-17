@@ -2,6 +2,7 @@ package com.github.pireba.itunesparser;
 
 import java.net.URL;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  * This class represents an iTunes Library.<br>
@@ -99,4 +100,38 @@ public class Library {
 	public void setShowContentRatings(Boolean showContentRatings) {
 		this.showContentRatings = showContentRatings;
 	}
+
+    @Override
+    public String toString()
+    {
+        return "Library [applicationVersion=" + applicationVersion + ", date=" + date + ", features=" + features
+                + ", libraryPersistentID=" + libraryPersistentID + ", majorVersion=" + majorVersion + ", minorVersion="
+                + minorVersion + ", musicFolder=" + musicFolder + ", showContentRatings=" + showContentRatings + "]";
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(applicationVersion, date, features, libraryPersistentID, majorVersion, minorVersion,
+                musicFolder, showContentRatings);
+    }
+
+    @Override
+    public boolean equals(Object obj)
+    {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Library other = (Library) obj;
+        return Objects.equals(applicationVersion, other.applicationVersion) && Objects.equals(date, other.date)
+                && Objects.equals(features, other.features)
+                && Objects.equals(libraryPersistentID, other.libraryPersistentID)
+                && Objects.equals(majorVersion, other.majorVersion) && Objects.equals(minorVersion, other.minorVersion)
+                && Objects.equals(musicFolder, other.musicFolder)
+                && Objects.equals(showContentRatings, other.showContentRatings);
+    }
+	
 }
